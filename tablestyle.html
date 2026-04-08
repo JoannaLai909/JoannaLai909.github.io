@@ -50,8 +50,9 @@
     /* 重點：fixed 但寫在 outer-box 裡面 */
     .fixed-box {
       position: fixed;
-      top: 120px;
-      right: 120px;
+      /* fixed 仍然是相對於視窗，所以要手動算到外框內側 */
+      top: 95px;
+      right: calc((100vw - 900px) / 2 + 35px);
       width: 160px;
       height: 160px;
       border: 4px solid #66a80f;
@@ -101,4 +102,5 @@
 
 </body>
 </html>
+
 
