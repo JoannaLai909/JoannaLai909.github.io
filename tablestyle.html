@@ -1,75 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Table and Fixed Div</title>
   <style>
     body {
       margin: 0;
-      font-family: Georgia, "Times New Roman", serif;
       background: #e9e9e9;
+      font-family: "Times New Roman", serif;
     }
 
-    /* 外框 */
+    /* 外面的大框 */
     .outer-box {
       width: 820px;
-      margin: 80px auto;
-      background: #eeeeee;
+      margin: 60px auto;
+      padding: 60px;
+      background: #efefef;
       border: 1px solid #cfcfcf;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      padding: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
       position: relative;
     }
 
+    /* 左右排版 */
     .content {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
     }
 
+    /* 表格 */
     table {
       border-collapse: collapse;
-      width: 300px;
-      font-size: 22px;
+      width: 340px;
     }
 
     th, td {
-      border: 2px solid #333;
-      padding: 14px;
+      border: 3px solid #444;
+      padding: 18px 20px;
       text-align: left;
     }
 
     th {
-      background: #8e939c;
+      background: #9ea3ab;
       color: white;
+      font-size: 28px;
+      font-weight: bold;
     }
 
-    .yellow { background: #fff600; }
-    .white { background: #ffffff; }
+    td {
+      font-size: 22px;
+      height: 44px;
+    }
 
-    /* 重點：fixed 但寫在 outer-box 裡面 */
+    .yellow {
+      background: #fff600;
+    }
+
+    .white {
+      background: #ffffff;
+    }
+
+    /* 先佔位置，讓左右看起來有同高度區域 */
+    .box-placeholder {
+      width: 180px;
+      height: 240px;
+      visibility: hidden;
+      flex-shrink: 0;
+    }
+
+    /* 真正的 fixed 綠色框 */
     .fixed-box {
       position: fixed;
-      /* fixed 仍然是相對於視窗，所以要手動算到外框內側 */
-      top: 95px;
-      right: calc((100vw - 900px) / 2 + 35px);
-      width: 160px;
-      height: 160px;
-      border: 4px solid #66a80f;
+      top: 115px;
+      right: calc((100vw - 940px) / 2 + 60px);
+      width: 180px;
+      height: 240px;
+      border: 5px solid #6aa80f;
       background: white;
-      padding: 10px;
-      font-size: 20px;
       box-sizing: border-box;
+      padding: 12px 14px;
+      font-size: 28px;
+      line-height: 1.2;
     }
   </style>
 </head>
 <body>
 
   <div class="outer-box">
-
     <div class="content">
-
-      <!-- table -->
       <table>
         <tr>
           <th>Firstname</th>
@@ -89,15 +108,15 @@
         </tr>
       </table>
 
+      <div class="box-placeholder"></div>
     </div>
 
-    <!-- 放在外框裡面（但仍然 fixed） -->
     <div class="fixed-box">
       This div<br>
       element has<br>
-      position: fixed;
+      position:<br>
+      fixed;
     </div>
-
   </div>
 
 </body>
