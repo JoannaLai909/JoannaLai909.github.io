@@ -11,7 +11,7 @@
       background: #e9e9e9;
     }
 
-    /* 外框（題目要求的框框） */
+    /* 外框 */
     .outer-box {
       width: 820px;
       margin: 80px auto;
@@ -22,11 +22,9 @@
       position: relative;
     }
 
-    /* 內容區：table + 右邊空間 */
     .content {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
     }
 
     table {
@@ -46,15 +44,10 @@
       color: white;
     }
 
-    .yellow {
-      background: #fff600;
-    }
+    .yellow { background: #fff600; }
+    .white { background: #ffffff; }
 
-    .white {
-      background: #ffffff;
-    }
-
-    /* 右上固定框 */
+    /* 重點：fixed 但寫在 outer-box 裡面 */
     .fixed-box {
       position: fixed;
       top: 120px;
@@ -71,12 +64,11 @@
 </head>
 <body>
 
-  <!-- 外框 -->
   <div class="outer-box">
 
     <div class="content">
 
-      <!-- Table -->
+      <!-- table -->
       <table>
         <tr>
           <th>Firstname</th>
@@ -98,13 +90,13 @@
 
     </div>
 
-  </div>
+    <!-- 放在外框裡面（但仍然 fixed） -->
+    <div class="fixed-box">
+      This div<br>
+      element has<br>
+      position: fixed;
+    </div>
 
-  <!-- 固定在右上角的div（不在外框裡，因為是fixed） -->
-  <div class="fixed-box">
-    This div<br>
-    element has<br>
-    position: fixed;
   </div>
 
 </body>
