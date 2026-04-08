@@ -1,84 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Page Layout</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Table and Fixed Div</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: #e9e9e9;
+    }
 
-        /* Table Styling */
-        table {
-            border-collapse: collapse;
-            width: 300px;
-        }
+    .wrapper {
+      width: 780px;
+      margin: 90px auto;
+      background: #f5f5f5;
+      border: 1px solid #d7d7d7;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
+      padding: 45px 35px;
+      position: relative;
+      min-height: 260px;
+    }
 
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: left;
-        }
+    table {
+      border-collapse: collapse;
+      width: 290px;
+      font-size: 22px;
+    }
 
-        th {
-            background-color: #808080;
-            color: white;
-            font-family: serif; /* Matches the "Firstname" serif font in image */
-        }
+    th,
+    td {
+      border: 2px solid #333;
+      padding: 14px 14px;
+      text-align: left;
+    }
 
-        /* Striped background colors */
-        tr:nth-child(even) {
-            background-color: #ffff00; /* Yellow for rows 1 and 3 */
-        }
+    th {
+      background: #8e939c;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
 
-        tr:nth-child(odd) {
-            background-color: white; /* White for row 2 */
-        }
+    .yellow {
+      background: #fff600;
+    }
 
-        /* Fixed Div Styling */
-        .fixed-box {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 150px;
-            height: 120px;
-            border: 3px solid #76b900; /* Green border */
-            padding: 10px;
-            background-color: white;
-            font-size: 14px;
-        }
-    </style>
+    .white {
+      background: #ffffff;
+    }
+
+    .fixed-box {
+      position: fixed;
+      top: 140px;
+      right: 120px;
+      width: 145px;
+      min-height: 145px;
+      border: 4px solid #66a80f;
+      background: white;
+      padding: 8px;
+      font-size: 20px;
+      line-height: 1.15;
+      box-sizing: border-box;
+    }
+  </style>
 </head>
 <body>
-
+  <div class="wrapper">
     <table>
-        <thead>
-            <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>3</td>
-            </tr>
-        </tbody>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+      </tr>
+      <tr class="yellow">
+        <td>1</td>
+        <td>1</td>
+      </tr>
+      <tr class="white">
+        <td>2</td>
+        <td>2</td>
+      </tr>
+      <tr class="yellow">
+        <td>3</td>
+        <td>3</td>
+      </tr>
     </table>
+  </div>
 
-    <div class="fixed-box">
-        This div element has position: fixed;
-    </div>
-
+  <div class="fixed-box">
+    This div<br />
+    element has<br />
+    position: fixed;
+  </div>
 </body>
 </html>
