@@ -1,82 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Layout</title>
-<style>
-*{box-sizing:border-box;}
-body{
-  margin:0;
-  background:#58aeea;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  height:100vh;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout Demo</title>
+  <style>
+    * { box-sizing: border-box; }
 
-.container{
-  display:flex;
-  align-items:center;
-  gap:40px;
-}
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #58aeea;
+      padding: 24px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.board{
-  width:300px;
-  background:#f4f4ea;
-  padding:10px;
-  border-radius:10px;
-}
+    .board {
+      width: min(100%, 360px);
+      background: #f4f4ea;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    }
 
-.top{
-  height:90px;
-  background:#a9cf45;
-  margin-bottom:8px;
-}
+    .top {
+      height: 92px;
+      background: #a9cf45;
+      margin-bottom: 8px;
+      border-radius: 2px;
+    }
 
-@media (min-width:481px){
-  .middle{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:6px;
-    margin-bottom:6px;
-  }
-  .middle div{
-    height:120px;
-    background:#18b8c9;
-  }
-  .bottom{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:6px;
-  }
-  .bottom div{
-    height:70px;
-    background:#d7dee2;
-  }
-}
+    .middle,
+    .bottom {
+      gap: 6px;
+    }
 
-@media (max-width:480px){
-  .middle div{
-    height:45px;
-    background:#18b8c9;
-    margin-bottom:6px;
-  }
-  .bottom{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:6px;
-  }
-  .bottom div{
-    height:35px;
-    background:#d7dee2;
-  }
-}
-</style>
+    /* Desktop / tablet */
+    @media (min-width: 481px) {
+      .middle {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 6px;
+      }
+
+      .middle div {
+        height: 132px;
+        background: #18b8c9;
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .bottom div {
+        height: 72px;
+        background: #d7dee2;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      body {
+        padding: 16px;
+      }
+
+      .board {
+        width: min(100%, 320px);
+      }
+
+      .middle {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .middle div {
+        height: 48px;
+        background: #18b8c9;
+        margin-bottom: 6px;
+      }
+
+      .middle div:last-child {
+        margin-bottom: 0;
+      }
+
+      .bottom {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .bottom div {
+        height: 36px;
+        background: #d7dee2;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
   <div class="board">
     <div class="top"></div>
     <div class="middle">
@@ -91,7 +114,5 @@ body{
       <div></div>
     </div>
   </div>
-</div>
-
 </body>
 </html>
