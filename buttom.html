@@ -1,52 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Design Spec Button</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            /* Adding some padding to the body so the button isn't squished against the screen edge */
-            padding: 50px; 
-            background-color: #f6f6f6; /* Using the header bg color from the spec for contrast */
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Specified Button Demo</title>
+  <style>
+    :root {
+      --btn-text: #2f2f2f;
+      --btn-border: #2f2f2f;
+      --btn-bg: #ffffff;
+      --page-bg: #f5f6f8;
+    }
 
-        .spec-button {
-            /* Typography */
-            font-family: 'Roboto', sans-serif;
-            font-weight: 400; /* Regular */
-            font-size: 13px;
-            color: #2f2f2f;
-            
-            /* Background & Border */
-            background-color: #ffffff;
-            border: 1px solid #2f2f2f;
-            border-radius: 8px; /* R8 */
-            
-            /* Sizing & Spacing */
-            height: 22px; /* h22 */
-            padding: 0 18px; /* The '18' redlines indicate horizontal padding */
-            box-sizing: border-box; /* Ensures padding and border are included in the 22px height */
-            
-            /* Alignment & Interaction */
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            text-decoration: none;
-        }
+    * { box-sizing: border-box; }
 
-        /* Optional: Add a slight hover effect for better user experience */
-        .spec-button:hover {
-            background-color: #f0f0f0;
-        }
-    </style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: var(--page-bg);
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      color: #222;
+    }
+
+    .card {
+      width: min(720px, calc(100vw - 32px));
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.2;
+    }
+
+    p {
+      margin: 0 0 20px;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .demo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px;
+      border: 1px dashed #d4d7dc;
+      border-radius: 12px;
+      background: #fcfcfd;
+    }
+
+    .spec-button {
+      height: 22px;
+      padding: 0 10px 0 8px;
+      border: 1px solid var(--btn-border);
+      border-radius: 8px;
+      background: var(--btn-bg);
+      color: var(--btn-text);
+      font-size: 13px;
+      font-weight: 400;
+      font-family: Roboto, Arial, Helvetica, sans-serif;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .spec-button:hover {
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .spec-button:active {
+      transform: translateY(0.5px);
+    }
+
+    .icon-box {
+      width: 10px;
+      height: 10px;
+      border: 1px solid #8fb9cf;
+      border-radius: 2px;
+      display: inline-block;
+      flex: 0 0 auto;
+    }
+
+    .notes {
+      margin-top: 20px;
+      padding-left: 18px;
+      color: #444;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .notes code {
+      background: #f1f3f5;
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+    }
+  </style>
 </head>
 <body>
+  <main class="card">
+    <h1>Specified Button</h1>
+    <p>
+      This page reproduces the button style from the provided design reference.
+    </p>
 
-    <button class="spec-button">查看資訊</button>
+    <div class="demo-row">
+      <button class="spec-button" aria-label="查看資料">
+        <span class="icon-box" aria-hidden="true"></span>
+        <span>查看資料</span>
+      </button>
+      <span>h22 / R8</span>
+    </div>
 
+    <ul class="notes">
+      <li>Height: <code>22px</code></li>
+      <li>Border radius: <code>8px</code></li>
+      <li>Background: <code>#ffffff</code></li>
+      <li>Outline: <code>1px solid #2f2f2f</code></li>
+      <li>Font: <code>Roboto Regular 13px</code></li>
+      <li>Text color: <code>#2f2f2f</code></li>
+    </ul>
+  </main>
 </body>
 </html>
