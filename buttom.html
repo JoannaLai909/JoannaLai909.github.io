@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Spec Button</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* Adding some padding to the body so the button isn't squished against the screen edge */
+            padding: 50px; 
+            background-color: #f6f6f6; /* Using the header bg color from the spec for contrast */
+        }
+
+        .spec-button {
+            /* Typography */
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400; /* Regular */
+            font-size: 13px;
+            color: #2f2f2f;
+            
+            /* Background & Border */
+            background-color: #ffffff;
+            border: 1px solid #2f2f2f;
+            border-radius: 8px; /* R8 */
+            
+            /* Sizing & Spacing */
+            height: 22px; /* h22 */
+            padding: 0 18px; /* The '18' redlines indicate horizontal padding */
+            box-sizing: border-box; /* Ensures padding and border are included in the 22px height */
+            
+            /* Alignment & Interaction */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        /* Optional: Add a slight hover effect for better user experience */
+        .spec-button:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="spec-button">查看資訊</button>
+
+</body>
+</html>
