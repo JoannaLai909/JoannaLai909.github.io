@@ -7,6 +7,15 @@
   <!-- Bootstrap 4 -->
   <link rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+  <style>
+    /* 讓 badge 更圓（比 badge-pill 更接近設計稿） */
+    .custom-badge{
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 
 <body>
@@ -31,7 +40,7 @@
 
   <!-- Button + Badge（分開） -->
   <button class="btn btn-secondary mr-2">Button</button>
-  <span class="badge badge-secondary">badge</span>
+  <span class="badge badge-secondary custom-badge">badge</span>
 
 </div>
 
