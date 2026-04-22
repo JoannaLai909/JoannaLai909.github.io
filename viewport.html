@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+<style>
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:#58aeea;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+}
+
+.container{
+  display:flex;
+  align-items:center;
+  gap:40px;
+}
+
+.board{
+  width:300px;
+  background:#f4f4ea;
+  padding:10px;
+  border-radius:10px;
+}
+
+.top{
+  height:90px;
+  background:#a9cf45;
+  margin-bottom:8px;
+}
+
+@media (min-width:481px){
+  .middle{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:6px;
+    margin-bottom:6px;
+  }
+  .middle div{
+    height:120px;
+    background:#18b8c9;
+  }
+  .bottom{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:6px;
+  }
+  .bottom div{
+    height:70px;
+    background:#d7dee2;
+  }
+}
+
+@media (max-width:480px){
+  .middle div{
+    height:45px;
+    background:#18b8c9;
+    margin-bottom:6px;
+  }
+  .bottom{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .bottom div{
+    height:35px;
+    background:#d7dee2;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="board">
+    <div class="top"></div>
+    <div class="middle">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="bottom">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
