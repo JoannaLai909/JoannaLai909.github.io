@@ -2,9 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CSS Image Styling</title>
+<title>Perfect Touch Layout</title>
 
 <style>
+*{
+  box-sizing:border-box;
+}
+
 body{
   margin:0;
   padding:40px;
@@ -17,43 +21,46 @@ body{
   margin:0 auto;
   display:flex;
   align-items:center;
-  justify-content:center;
-  gap:20px;   /* ⭐ 關鍵：控制距離 */
 }
 
-/* 左右圖 */
+/* 左右圖（扣掉圓） */
 .left, .right{
-  width:33%;
+  width:calc((100% - 150px) / 2);  /* ⭐關鍵 */
 }
 
-/* 左圖（不變形） */
+/* 左圖 */
 .left img{
   width:100%;
   height:300px;
   object-fit:cover;
   border-radius:18px;
+  display:block;
 }
 
-/* 右圖（變形） */
+/* 右圖 */
 .right img{
   width:100%;
   height:300px;
   object-fit:fill;
+  display:block;
 }
 
-/* 中間圓 */
+/* 圓 */
 .circle{
   width:150px;
   height:150px;
   border-radius:50%;
-  border:3px solid #888;
   overflow:hidden;
+  border:3px solid #777;
+  background:#fff;
+  flex-shrink:0;   /* ⭐避免被壓縮 */
 }
 
 .circle img{
   width:100%;
   height:100%;
   object-fit:cover;
+  display:block;
 }
 </style>
 
@@ -64,7 +71,7 @@ body{
 <div class="container">
 
   <div class="left">
-    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785">
   </div>
 
   <div class="circle">
@@ -72,7 +79,7 @@ body{
   </div>
 
   <div class="right">
-    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+    <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785">
   </div>
 
 </div>
