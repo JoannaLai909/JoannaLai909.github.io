@@ -1,131 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Image Styling Practice</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<title>CSS Image Styling</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f2f2;
-      color: #222;
-      padding: 32px;
-    }
+<style>
+body{
+  margin:0;
+  padding:40px;
+  background:#f2f2f2;
+}
 
-    .wrapper {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+/* 外層 */
+.container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
 
-    .title {
-      font-size: 22px;
-      line-height: 1.45;
-      margin: 0 0 34px;
-      color: #1f2937;
-    }
+/* 左右圖片 */
+.left, .right{
+  width:33%;
+}
 
-    .gallery {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-      min-height: 360px;
-    }
+/* 左圖（不變形） */
+.left img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-right:-75px;   /* ⭐關鍵：相切 */
+}
 
-    .panel {
-      width: 33%;
-      max-width: 340px;
-    }
+/* 右圖（故意變形） */
+.right img{
+  width:100%;
+  height:300px;
+  object-fit:fill;
+  margin-left:-75px;    /* ⭐關鍵：相切 */
+}
 
-    .img-left,
-    .img-right {
-      width: 100%;
-      height: 380px;
-      display: block;
-      object-fit: cover;
-      filter: sepia(18%) contrast(92%) brightness(94%);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
+/* 中間圓 */
+.circle{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  border:3px solid #666;
+  overflow:hidden;
+  z-index:2;
+}
 
-    .img-left {
-      border-radius: 18px;
-      object-position: center;
-    }
+.circle img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+</style>
 
-    .circle-wrap {
-      width: 150px;
-      height: 150px;
-      border: 3px solid #6b7280;
-      border-radius: 50%;
-      overflow: hidden;
-      flex: 0 0 150px;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    }
-
-    .circle-wrap img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-      object-position: center;
-    }
-
-    .img-right {
-      border-radius: 0;
-      object-fit: fill;
-      object-position: center;
-    }
-
-    @media (max-width: 900px) {
-      .gallery {
-        flex-direction: column;
-        gap: 22px;
-      }
-
-      .panel {
-        width: min(100%, 340px);
-      }
-
-      .circle-wrap {
-        order: -1;
-      }
-    }
-  </style>
 </head>
+
 <body>
-  <div class="wrapper">
 
+<div class="container">
 
-    <section class="gallery">
-      <div class="panel">
-        <img
-          class="img-left"
-          src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80"
-          alt="Rounded city image"
-        />
-      </div>
-
-      <div class="circle-wrap" aria-label="Circular image with border">
-        <img
-          src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-          alt="Circular mountain lake image"
-        />
-      </div>
-
-      <div class="panel">
-        <img
-          class="img-right"
-          src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&w=900&q=80"
-          alt="Distorted city image"
-        />
-      </div>
-    </section>
+  <div class="left">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
   </div>
+
+  <div class="circle">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb">
+  </div>
+
+  <div class="right">
+    <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+  </div>
+
+</div>
+
 </body>
 </html>
