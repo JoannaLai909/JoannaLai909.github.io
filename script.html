@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Interaction</title>
+  <style>
+    #message {
+      font-size: 24px;
+    }
+    #button {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div id="message">Hello</div>
+  <button id="button" onmouseover="changeTextColor('red')" onclick="changeTextColorOnClick()">Button</button>
+
+  <script>
+    // Change text color on mouse over
+    function changeTextColor(color) {
+      document.getElementById('message').style.color = color;
+    }
+
+    // Change text content and color on button click
+    function changeTextColorOnClick() {
+      document.getElementById('message').innerHTML = "Mouse Click";
+      document.getElementById('message').style.color = "magenta";
+    }
+  </script>
+</body>
+</html>
