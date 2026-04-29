@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+</head>
+<body>
+  <h3>Please input a number between 150 and 300:</h3>
+  <input type="text" id="numberInput">
+  <button onclick="validateInput()">Submit</button>
+  <p id="message"></p>
+
+  <script>
+    function validateInput() {
+      var inputValue = document.getElementById("numberInput").value;
+      var message = document.getElementById("message");
+
+      if (inputValue >= 150 && inputValue <= 300) {
+        message.textContent = "Input OK";
+        message.style.color = "green"; // Green color for valid input
+      } else if (inputValue < 150) {
+        message.textContent = "Value too small";
+        message.style.color = "red"; // Red color for "too small"
+      } else if (inputValue > 300) {
+        message.textContent = "Value too large";
+        message.style.color = "red"; // Red color for "too large"
+      }
+    }
+  </script>
+</body>
+</html>
