@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Circle Properties</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f7fb;
+      margin: 0;
+      padding: 40px;
+      color: #222;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h1 {
+      color: #2b6cb0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    input {
+      width: 80%;
+      padding: 10px;
+      margin: 15px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #2b6cb0;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1e4e8c;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Circle Properties Calculator</h1>
+    <p>Enter a radius to calculate the circumference and area of a circle.</p>
+
+    <input type="number" id="radius" placeholder="Enter radius" />
+    <br />
+    <button onclick="calculateCircle()">Calculate</button>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calcCircumference(radius) {
+      var circumference = 2 * Math.PI * radius;
+      document.getElementById("result").innerHTML +=
+        "The circumference is " + circumference.toFixed(2) + "<br>";
+    }
+
+    function calcArea(radius) {
+      var area = Math.PI * radius * radius;
+      document.getElementById("result").innerHTML +=
+        "The area is " + area.toFixed(2) + "<br>";
+    }
+
+    function calculateCircle() {
+      var radius = Number(document.getElementById("radius").value);
+      document.getElementById("result").innerHTML = "";
+
+      if (radius <= 0) {
+        document.getElementById("result").innerHTML = "Please enter a radius greater than 0.";
+        return;
+      }
+
+      calcCircumference(radius);
+      calcArea(radius);
+    }
+  </script>
+</body>
+</html>
